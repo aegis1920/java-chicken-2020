@@ -2,10 +2,19 @@ package domain;
 
 import static org.assertj.core.api.Assertions.*;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class OrderInfosTest {
+
+    @BeforeEach
+    void setUp() {
+        int tableNumber = 1;
+
+        Table table = TableRepository.getTable(tableNumber);
+        table.clean();
+    }
 
     @DisplayName("테이블의 치킨 갯수를 리턴하는 메서드 테스트")
     @Test

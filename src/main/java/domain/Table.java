@@ -15,16 +15,16 @@ public class Table {
         orderInfos.add(new OrderInfo(MenuRepository.getMenu(menuNumber), new Count(count)));
     }
 
-    public void clean() {
-        orderInfos.clean();
-    }
-
     public boolean isRightTable(final int number) {
         return this.number == number;
     }
 
     public Count countChicken() {
         return orderInfos.countChicken();
+    }
+
+    public void clean() {
+        orderInfos.clean();
     }
 
     public boolean isOrder() {
