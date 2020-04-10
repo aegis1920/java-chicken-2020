@@ -13,4 +13,16 @@ public class Count {
 			throw new IllegalArgumentException("한 테이블에서 주문할 수 있는 한 메뉴의 최대 수량은 99개 이하, 1개 이상이어야 합니다!");
 		}
 	}
+
+	private long addValue(long value) {
+		return this.count + value;
+	}
+
+	public Count add(final Count count) {
+		return new Count(count.addValue(this.count));
+	}
+
+	public long getCount() {
+		return count;
+	}
 }

@@ -19,4 +19,12 @@ public class CountTest {
 	void countNewConstructorTest() {
 		assertThat(new Count(30)).isNotNull();
 	}
+
+	@DisplayName("메뉴의 수량을 더했을 때 더한 값을 새로운 인스턴스로 만들어 정상적으로 생성해주는지 테스트")
+	@Test
+	void addConstructorTest() {
+		Count firstCount = new Count(40);
+		Count secondCount = new Count(30);
+		assertThat(firstCount.add(secondCount).getCount()).isEqualTo(70);
+	}
 }
