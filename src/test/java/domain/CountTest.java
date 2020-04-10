@@ -27,4 +27,20 @@ public class CountTest {
 		Count secondCount = new Count(30);
 		assertThat(firstCount.add(secondCount).getCount()).isEqualTo(70);
 	}
+
+	@DisplayName("현재 Count가 할인이 가능한지 묻는 테스트")
+	@Test
+	void isPossibleDiscountTest() {
+		Count count = new Count(40);
+
+		assertThat(count.isPossibleDiscount()).isTrue();
+	}
+
+	@DisplayName("현재 Count가 얼만큼의 할인을 해줄 수 있는지 그 갯수를 리턴하는 테스트")
+	@Test
+	void discountCountTest() {
+		Count count = new Count(40);
+
+		assertThat(count.discountCount()).isEqualTo(4);
+	}
 }
