@@ -8,4 +8,12 @@ public class OrderInfo {
         this.menu = menu;
         this.count = count;
     }
+
+    public boolean isChickenMenu() {
+        return menu.isChickenCategory();
+    }
+
+    public Count addCount(Count count) {
+        return this.count.add(count);
+    }
 }
