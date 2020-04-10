@@ -8,9 +8,15 @@ import org.junit.jupiter.api.Test;
 public class CountTest {
 	@DisplayName("메뉴의 수량을 입력받을 때 99개가 넘으면 예외를 던지는 메서드 테스트")
 	@Test
-	void countConstructorTest() {
+	void countExceptionConstructorTest() {
 		assertThatThrownBy(() -> {
 			new Count(100);
 		}).isInstanceOf(IllegalArgumentException.class);
+	}
+
+	@DisplayName("메뉴의 수량을 입력받을 때 정상적인 갯수를 입력하면 정상적으로 생성되는지 테스트")
+	@Test
+	void countNewConstructorTest() {
+		assertThat(new Count(30)).isNotNull();
 	}
 }
