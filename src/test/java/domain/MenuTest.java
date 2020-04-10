@@ -14,4 +14,13 @@ class MenuTest {
 
         assertThat(menu.isRightMenu(menuNumber)).isTrue();
     }
+
+    @DisplayName("현재 메뉴가 치킨 종류인지 확인하는 테스트")
+    @Test
+    void isChickenCategoryTest() {
+        int menuNumber = 1;
+        Menu menu = MenuRepository.getMenu(menuNumber);
+
+        assertThat(menu.isChickenCategory()).isTrue();
+    }
 }
