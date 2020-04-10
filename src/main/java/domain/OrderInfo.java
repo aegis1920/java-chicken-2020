@@ -16,4 +16,12 @@ public class OrderInfo {
     public Count addCount(Count count) {
         return this.count.add(count);
     }
+
+    public Menu getMenu() {
+        return menu;
+    }
+
+    public long calculate() {
+        return menu.calculate(count);
+    }
 }

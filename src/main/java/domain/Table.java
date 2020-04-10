@@ -15,9 +15,8 @@ public class Table {
         orderInfos.add(new OrderInfo(MenuRepository.getMenu(menuNumber), new Count(count)));
     }
 
-    @Override
-    public String toString() {
-        return Integer.toString(number);
+    public void clean() {
+        orderInfos.clean();
     }
 
     public boolean isRightTable(final int number) {
@@ -26,5 +25,22 @@ public class Table {
 
     public Count countChicken() {
         return orderInfos.countChicken();
+    }
+
+    public boolean isOrder() {
+        return orderInfos.isOrder();
+    }
+
+    public long calculateTotal() {
+        return orderInfos.calculate();
+    }
+
+    public OrderInfos getOrderInfos() {
+        return orderInfos;
+    }
+
+    @Override
+    public String toString() {
+        return Integer.toString(number);
     }
 }

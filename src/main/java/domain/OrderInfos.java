@@ -20,4 +20,22 @@ public class OrderInfos {
             .reduce(Count::add)
             .orElse(new Count(0));
     }
+
+    public boolean isOrder() {
+        return !orderInfos.isEmpty();
+    }
+
+    public List<OrderInfo> getOrderInfos() {
+        return orderInfos;
+    }
+
+    public long calculate() {
+        return orderInfos.stream()
+            .mapToLong(OrderInfo::calculate)
+            .sum();
+    }
+
+    public void clean() {
+        orderInfos.clear();
+    }
 }

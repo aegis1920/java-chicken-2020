@@ -25,4 +25,8 @@ public class Menu {
     public String toString() {
         return category + " " + number + " - " + name + " : " + price + "원";
     }
+
+    public long calculate(final Count count) {
+        return count.multiply(price);
+    }
 }

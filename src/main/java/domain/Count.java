@@ -38,4 +38,8 @@ public class Count {
 	public long getCount() {
 		return count;
 	}
+
+	public long multiply(final int price) {
+		return price * count;
+	}
 }
